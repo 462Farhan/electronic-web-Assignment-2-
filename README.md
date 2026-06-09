@@ -1,16 +1,48 @@
-# React + Vite
+# Electronic Web Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Electronic Web Assignment is a React-based electronics shopping website developed using React and Vite. The website allows users to browse products, view deals, explore product details, and access contact information through a clean and user-friendly interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* Home Page
+* Products Page
+* Deals Page
+* Contact Page
+* Victus Product Page
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+* React
+* Vite
+* JavaScript
+* HTML
+* CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshots
+
+### Home Page
+
+![Home Page](screens/Home.png)
+
+### Products Page
+
+![Products Page](screens/Products.png)
+
+### Deals Page
+
+![Deals Page](screens/Deals.png)
+
+### Contact Page
+
+![Contact Page](screens/Contact.png)
+
+### Victus Product Page
+
+![Victus Page](screens/Victus.png)
+
+## Author
+
+Farhan Shaikh
+.

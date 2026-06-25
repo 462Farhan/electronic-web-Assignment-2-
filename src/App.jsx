@@ -6,6 +6,7 @@ import Contact from './components/Contact.jsx'
 import Deals from './components/Deals.jsx'
 import Victus from './components/Victus.jsx'
 import Laptops from './components/Laptops.jsx'
+import Addproducts from './components/Addproducts.jsx'
 import {Routes,Route} from "react-router-dom"
 function App() 
 { function Manager()
@@ -37,6 +38,7 @@ function App()
   <Route path="/Congrats" element={<Deals/>}/>
   <Route path="/victuslaptop" element={<Victus/>}/>
   <Route path="/laptops" element={<Laptops/>}/>
+    <Route path="/addpr" element={<Addproducts/>}/>
 </Routes>
 
 

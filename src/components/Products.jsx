@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import Laptops from "./Laptops";
+import { useState,useEffect } from "react";
+import { supabase } from "./supabase";
 
 function Products() {
-  let result;
-  let click=false;
+ useEffect(() => {
+    fetchpr();
+}, []);
+ const navigate = useNavigate();
   const pageStyle = {
     padding: "40px",
     backgroundColor: "#f4f6f9",
@@ -90,38 +94,46 @@ function Products() {
     color: "white",
     cursor: "pointer",
   };
-function changes()
+const categoryButton2 = {
+  position: "relative",
+  left: "500px", // Increase or decrease as needed
+  padding: "8px 18px",
+  border: "none",
+  borderRadius: "8px",
+  backgroundColor: "#222",
+  color: "white",
+  cursor: "pointer",
+  fontSize: "15px",
+};
+  const[products,setproducts]=useState("")
+function changes(e)
 {
- let  inp = document.querySelector("input");
-  let s=inp.value
-  if(s==="Laptops" )
-  {
-    console.log("Executed successfully");
-    return s;
-   
-  }
+ setproducts(e.target.value)
+ if(products=="Laptops")
+ {
+  console.log("equal")
+  //  navigate("/laptops")
+  location.pathname=products
+ }
+else{
+  console.log("not equals")
 }
-function go()
-{ let a;
-  let b;
-  data=letsgo();
-  return{
-a:data.result,
-b:data.click
-  }
-}
-function letsgo()
-        {
-           return{
-             
-           result: changes(),
-            click: true
+ 
 
-           };
-        }
+}
+const[data,setinfo]=useState([])
+async function fetchpr()
+{
+ const info=await supabase.from("eprod").select("*");
+ console.log(info)
+ setinfo(info.data)
+
+}
+
 
   return (
     <div style={pageStyle}>
+      <button style={categoryButton2} onClick={()=>location.pathname="/addpr"}> +add</button>
       <h1 style={titleStyle}>Our Products</h1>
 
       <p style={subtitleStyle}>
@@ -132,7 +144,7 @@ function letsgo()
         type="text"
         placeholder="Search Products..."
         style={searchStyle}
-        onChange={letsgo}
+        onChange={(e)=>{changes(e)}}
       />
 
       <div style={categoryContainer}>
@@ -189,6 +201,14 @@ function letsgo()
           <p style={priceStyle}>₹89,999</p>
           <button style={buttonStyle}>View Details</button>
         </div>
+        {
+          data.map((d)=>{return(<div style={cardStyle} key={d.id}>
+          <div style={imageStyle}><img src={d.image} alt="asus img" width="200px" height="200px" /></div>
+          <h3 style={productName}>{d.name}</h3>
+          <p style={priceStyle}>${d.price}</p>
+          <button style={buttonStyle}>View Details</button>
+        </div>)})
+        }
       </div>
 
       <div

@@ -23,6 +23,11 @@ function Contact() {
     border: "1px solid #ccc",
     borderRadius: "6px",
   };
+  function action()
+  {
+    console.log("message send")
+    alert("message send");
+  }
 
   return (
     <div style={pageStyle}>
@@ -58,6 +63,7 @@ function Contact() {
             borderRadius: "6px",
             cursor: "pointer",
           }}
+          onClick={action}
         >
           Send Message
         </button>
